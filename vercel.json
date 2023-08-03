@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "path/to/python/server",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "path/to/frontend/directory",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "path/to/python/server/\\1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "path/to/frontend/directory/\\1"
+    }
+  ]
+}
